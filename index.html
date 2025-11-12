@@ -1,0 +1,23 @@
+<html>
+ <body>
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+   function BaconIpsumGenerator() {
+  $.ajax({
+    url: "https://baconipsum.com/api/?type=meat-and-filler",
+    method: 'GET',
+    success: function main(paragraph) {
+      let html ='<p>' + paragraph + '</p>';
+      $('p').html(html);
+    },
+    error: function  main() {
+      alert("ERROR: Bacon Ipsum failed.");
+    }
+  });
+ }
+</script>
+<button onclick="BaconIpsumGenerator()">Generate Place holder text</button>
+<h1>Bacon Ipsum generator.</h1>
+<p></p>
+ </body>
+</html>
